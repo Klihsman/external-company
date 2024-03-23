@@ -1,0 +1,41 @@
+.external-company-wrapper {
+  min-height: 90vh;
+  padding: 10px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.external-company-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.register-button {
+  padding: 10px 28px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid #ccc;
+  background-color: transparent;
+}
+
+.share-button {
+  padding: 10px 28px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid #ccc;
+  background-color: #3f50b5;
+  color: #fff;
+}
+
+.delete-icon {
+  color: red;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.edit-icon {
+  cursor: pointer;
+}

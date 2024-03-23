@@ -1,0 +1,60 @@
+<div class="external-company-wrapper">
+  <div class="external-company-actions">
+    <button
+      (click)="openRegisterExternalCompanyDialog('0ms', '0ms')"
+      class="register-button"
+    >
+      Cadastrar
+    </button>
+    <button class="share-button" (click)="copyUrlToClipboard()">
+      Compartilhar Url
+    </button>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef>Data da criação</th>
+      <td mat-cell *matCellDef="let element">{{ element.createdAt }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="companyName">
+      <th mat-header-cell *matHeaderCellDef>Nome da empresa</th>
+      <td mat-cell *matCellDef="let element">{{ element.companyName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="collaboratorsCount">
+      <th mat-header-cell *matHeaderCellDef>Quantidade de colaboradores</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.collaboratorsCount }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef=" ">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon
+          class="edit-icon"
+          aria-hidden="false"
+          fontIcon="edit"
+          (click)="openEditExternalCompanyDialog('0ms', '0ms', element)"
+        ></mat-icon>
+        <mat-icon
+          mat-raised-button
+          (click)="openDeleteDialog('0ms', '0ms', element)"
+          class="delete-icon"
+          aria-hidden="false"
+          fontIcon="delete"
+        ></mat-icon>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    [length]="200"
+    [pageSizeOptions]="[10]"
+    aria-label="Selecione a página"
+    (page)="onPageChange($event)"
+  >
+  </mat-paginator>
+</div>

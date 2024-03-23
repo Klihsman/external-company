@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Olá, Klihsman</h2>
+<mat-dialog-content>
+  <p>Criar empresa externa</p>
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="name" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Quantidade de colaboradores</mat-label>
+    <input matInput [(ngModel)]="collaboratorsCount" />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button>Cancelar</button>
+  <button mat-button [mat-dialog-close]="" cdkFocusInitial (click)="register()">
+    Cadastrar
+  </button>
+</mat-dialog-actions>
